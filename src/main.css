@@ -1,0 +1,121 @@
+@import "./normalize.css";
+
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --brigtYellow: hsl(71, 73%, 54%);
+  --lightGray: hsl(204, 43%, 93%);
+  --grayishBlue: hsl(218, 22%, 67%);
+}
+body {
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  background-color: var(--lightGray);
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  height: 100%;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 5px;
+}
+.card-top {
+  padding: 20px;
+}
+.header {
+  color: var(--cyan);
+  font-weight: 700;
+  padding: 10px;
+}
+h4 {
+  color: var(--brigtYellow);
+}
+
+p {
+  color: var(--grayishBlue);
+}
+
+.card-middle {
+  color: white;
+  background-color: var(--cyan);
+  padding: 15px;
+}
+.card-middle > header {
+  font-weight: 700;
+  padding: 10px;
+}
+.card-middle > h1 {
+  margin: 0;
+}
+span {
+  font-size: 12px;
+  margin-left: 10px;
+  opacity: 0.5;
+}
+
+.card-middle > h4 {
+  color: white;
+  margin-top: 10px;
+  opacity: 0.5;
+}
+button {
+    border: none;
+    color: white;
+    background-color: var(--brigtYellow);
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+.card-bottom {
+    color: white;
+    background-color: hsla(179, 62%, 43%, 0.8);
+    padding: 20px;
+    border-radius: 0 0 5px 5px;
+}
+.card-bottom > header {
+    font-weight: 700;
+}
+.card-bottom > ul {
+    padding-left: 0;
+    
+}
+.card-bottom > ul >li {
+    color: white;
+    opacity: 0.5;
+    list-style: none;
+    font-size: 14px;
+}
+@media only screen and (min-width: 1440px){
+    .card-top {
+        grid-area: top;
+    }
+    .card-top > p {
+        line-height: 2;
+        width: 80%;
+        
+    }
+    .card-middle {
+        grid-area: middle;
+        border-radius: 0 0 0 5px;
+    }
+    .card-bottom {
+        grid-area: bottom;
+        border-radius: 0 0 5px 0;
+    }
+    .container {
+        font-size: 20px;
+        margin-top: 100px;
+        width: 60%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "top top"
+        "middle bottom";
+    }
+    .card-bottom > ul >li {
+        line-height: 1.5;
+    }
+}
